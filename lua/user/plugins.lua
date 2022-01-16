@@ -90,6 +90,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "elixir-editors/vim-elixir"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
