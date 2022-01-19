@@ -36,6 +36,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 keymap("n", "<C-s>", ":w<CR>", opts)
+keymap("n", "<C-q>", ":Bdelete!<CR>", opts)
 keymap("n", "<S-w>", ":Telescope grep_string<CR>", opts)
 
 -- Move text up and down

@@ -85,17 +85,17 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" }, -- go to definition
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
-  ["i"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["t"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["j"] = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["T"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Terminal" },
 
   p = {
     name = "Packer",
@@ -170,7 +170,7 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
-  t = {
+  i = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
