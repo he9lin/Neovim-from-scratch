@@ -62,8 +62,12 @@ return packer.startup(function(use)
   use "christoomey/vim-tmux-navigator"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use "projekt0n/github-nvim-theme"
+  use "ful1e5/onedark.nvim"
+  use "Mofiqul/dracula.nvim"
+  use "doums/darcula"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
