@@ -4,13 +4,11 @@ if not status_ok then
 end
 
 circles.setup({
-  require("circles").setup({
-    icons = {
-      empty = "",
-      filled = "",
-      lsp_prefix = ""
-    },
-    -- override lsp_diagnostic virtual-text icon with `icons.lsp_prefix`
-    -- lsp = true
-  })
+  icons = {
+    empty = "",
+    filled = "",
+    lsp_prefix = ""
+  },
+  -- override lsp_diagnostic virtual-text icon with `icons.lsp_prefix`
+  -- lsp = true
 })
