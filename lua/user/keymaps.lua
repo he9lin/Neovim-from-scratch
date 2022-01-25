@@ -39,6 +39,8 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "<C-q>", ":Bdelete!<CR>", opts)
 keymap("n", "<S-w>", ":Telescope grep_string<CR>", opts)
 
+keymap("n", "<C-t>", ":tabnew<CR>", opts)
+
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
@@ -71,3 +73,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Lsp --
+keymap("n", "I", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
