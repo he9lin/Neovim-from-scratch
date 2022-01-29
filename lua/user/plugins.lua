@@ -91,6 +91,8 @@ return packer.startup(function(use)
     "ionide/Ionide-vim",
     run = "make fsautocomplete",
   }
+  use "scalameta/nvim-metals"
+  use "simrat39/rust-tools.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

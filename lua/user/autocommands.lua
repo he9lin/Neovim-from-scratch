@@ -28,7 +28,17 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  augroup _scala
+    autocmd!
+    autocmd FileType java,scala,sbt lua require("metals").initialize_or_attach({})
+  augroup end
 ]]
+
+-- augroup _rust
+--   autocmd!
+--   autocmd FileType rust lua require('rust-tools').setup({})
+-- augroup end
 
 -- Autoformat
 -- augroup _lsp
