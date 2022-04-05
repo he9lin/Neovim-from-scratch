@@ -76,3 +76,5 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Lsp --
 keymap("n", "I", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "M", ":TroubleToggle<CR>", opts)
+keymap("n", "gl", '<md>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)

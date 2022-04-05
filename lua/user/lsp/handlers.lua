@@ -76,7 +76,7 @@ local function lsp_keymaps(bufnr)
     bufnr,
     "n",
     "gl",
-    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
+    '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
     opts
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
@@ -85,10 +85,38 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  local opts = { noremap = true, silent = true }
+
+  lsp_keymaps(bufnr)
+
+  if client.name == "elixirls" then
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>n",
+      "<cmd>TermExec direction=horizontal cmd='mix test'<CR>",
+      opts
+    )
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>m",
+      "<cmd>TermExec direction=horizontal cmd='mix test %'<CR>",
+      opts
+    )
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>M",
+      "<cmd>TermExec direction=horizontal cmd='mix test %:" .. vim.api.nvim_win_get_cursor(0)[1] .. "'<CR>",
+      opts
+    )
+  end
+
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-  lsp_keymaps(bufnr)
+
   lsp_highlight_document(client)
 end
 
