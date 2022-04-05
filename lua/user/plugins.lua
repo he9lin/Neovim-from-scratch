@@ -68,6 +68,11 @@ return packer.startup(function(use)
   use "ful1e5/onedark.nvim"
   use "Mofiqul/dracula.nvim"
   use "doums/darcula"
+  use "EdenEast/nightfox.nvim"
+  use "savq/melange"
+  use "sainnhe/gruvbox-material"
+  use "sainnhe/edge"
+  use "sainnhe/everforest"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
