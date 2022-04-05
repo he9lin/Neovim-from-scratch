@@ -2,22 +2,24 @@
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
   default = "",
-  symlink = "",
+  symlink = "᎒",
   git = {
-    unstaged = "",
-    staged = "S",
+    unstaged = "⏺",
+    staged = "✓",
     unmerged = "",
     renamed = "➜",
-    deleted = "",
-    untracked = "U",
+    deleted = "−",
+    untracked = "★",
     ignored = "◌",
   },
   folder = {
+    arrow_open = "+",
+    arrow_closed = "−",
     default = "",
     open = "",
     empty = "",
     empty_open = "",
-    symlink = "",
+    symlink = "᎒",
   },
 }
 
