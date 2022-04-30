@@ -59,8 +59,8 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use "christoomey/vim-tmux-navigator"
   use "aserowy/tmux.nvim"
+  use "folke/todo-comments.nvim"
   -- use "christoomey/vim-tmux-navigator"
 
   -- Colorschemes
@@ -75,6 +75,12 @@ return packer.startup(function(use)
   use "sainnhe/gruvbox-material"
   use "sainnhe/edge"
   use "sainnhe/everforest"
+  use "sainnhe/sonokai"
+  use "NLKNguyen/papercolor-theme"
+  use "folke/tokyonight.nvim"
+  use "mhartington/oceanic-next"
+  use "ayu-theme/ayu-vim"
+  use "cocopon/iceberg.vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -87,12 +93,13 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "github/copilot.vim"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "folke/trouble.nvim"
   use {
     "ionide/Ionide-vim",
