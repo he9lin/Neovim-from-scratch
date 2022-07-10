@@ -93,7 +93,6 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-  use "github/copilot.vim"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -107,6 +106,20 @@ return packer.startup(function(use)
   }
   use "scalameta/nvim-metals"
   use "simrat39/rust-tools.nvim"
+  use "github/copilot.vim"
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   event = {"VimEnter"},
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup()
+  --     end, 100)
+  --   end,
+  -- }
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   module = "copilot_cmp",
+  -- }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
