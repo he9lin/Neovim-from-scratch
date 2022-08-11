@@ -52,7 +52,9 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
+  use {
+    "akinsho/toggleterm.nvim", tag = 'v2.*'
+  }
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -122,7 +124,13 @@ return packer.startup(function(use)
   -- }
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
+  }
 
   -- Treesitter
   use {
