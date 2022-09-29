@@ -124,13 +124,7 @@ return packer.startup(function(use)
   -- }
 
   -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
-    config = function()
-      require("telescope").load_extension("lazygit")
-    end,
-  }
+  use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
   use {
@@ -141,6 +135,7 @@ return packer.startup(function(use)
   use "elixir-editors/vim-elixir"
 
   -- Git
+  use "kdheepak/lazygit.nvim"
   use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
