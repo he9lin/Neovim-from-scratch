@@ -106,7 +106,7 @@ return packer.startup(function(use)
     "ionide/Ionide-vim",
     run = "make fsautocomplete",
   }
-  use "scalameta/nvim-metals"
+  use { "scalameta/nvim-metals", tag = "v0.7.x" }
   use "simrat39/rust-tools.nvim"
   use "github/copilot.vim"
   -- use {
