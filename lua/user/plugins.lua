@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use "mhartington/oceanic-next"
   use "ayu-theme/ayu-vim"
   use "cocopon/iceberg.vim"
+  use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -126,7 +127,9 @@ return packer.startup(function(use)
   -- }
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim", tag = "0.1.1"
+  }
 
   -- Treesitter
   use {
