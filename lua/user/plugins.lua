@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- vim.cmd [[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -46,16 +46,14 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "projekt0n/circles.nvim"
   use "nvim-tree/nvim-tree.lua"
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- Close buffer without closing window
   use "nvim-lualine/lualine.nvim"
   use {
     "akinsho/toggleterm.nvim", tag = 'v2.*'
   }
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
@@ -64,7 +62,6 @@ return packer.startup(function(use)
   -- use "christoomey/vim-tmux-navigator"
 
   -- Colorschemes
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "projekt0n/github-nvim-theme"
   use "ful1e5/onedark.nvim"
@@ -72,7 +69,6 @@ return packer.startup(function(use)
   use "doums/darcula"
   use "EdenEast/nightfox.nvim"
   use "savq/melange"
-  use "sainnhe/gruvbox-material"
   use "sainnhe/edge"
   use "sainnhe/everforest"
   use "sainnhe/sonokai"
@@ -82,6 +78,10 @@ return packer.startup(function(use)
   use "ayu-theme/ayu-vim"
   use "cocopon/iceberg.vim"
   use "rebelot/kanagawa.nvim"
+  use "catppuccin/nvim"
+  use "AlexvZyl/nordic.nvim"
+  use { "luisiacc/gruvbox-baby", branch = 'main' }
+  use "nyoom-engineering/oxocarbon.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -135,7 +135,6 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "elixir-editors/vim-elixir"
 
   -- Git
   use "kdheepak/lazygit.nvim"

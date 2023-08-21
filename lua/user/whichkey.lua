@@ -79,23 +79,24 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>e $WEZTERM_CONFIG<cr>", "Wezterm config" },
-  ["A"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["c"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+  ["C"] = { "<cmd>e $WEZTERM_CONFIG<cr>", "Wezterm config" },
+  ["d"] = { "<cmd>Bdelete!<cr>", "Close Buffer" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
-  ["t"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["h"] = { "<cmd>nohlsearch<cr>", "No Highlight" },
   ["j"] = { "<cmd>LazyGit<cr>", "Lazygit" },
+  ["r"] = { "<cmd>Telescope registers<cr>", "Registers" },
+  ["s"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["t"] = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "Terminal" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["T"] = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "Terminal" },
 
   p = {
     name = "Packer",
@@ -140,7 +141,7 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format() <cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
@@ -162,24 +163,19 @@ local mappings = {
     t = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
   },
 
-  s = {
+  S = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   i = {
     name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },

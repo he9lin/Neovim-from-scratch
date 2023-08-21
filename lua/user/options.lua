@@ -6,6 +6,7 @@ local options = {
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
+  incsearch = true,
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
@@ -35,12 +36,18 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
+vim.loader.enable()
+
 vim.opt_global.shortmess:remove "F"
 vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
