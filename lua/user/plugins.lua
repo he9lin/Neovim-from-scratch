@@ -96,7 +96,6 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -107,22 +106,9 @@ return packer.startup(function(use)
     "ionide/Ionide-vim",
     run = "make fsautocomplete",
   }
-  use { "scalameta/nvim-metals", tag = "v0.7.x" }
+  use {'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }}
   use "simrat39/rust-tools.nvim"
   use "github/copilot.vim"
-  -- use {
-  --   "zbirenbaum/copilot.lua",
-  --   event = {"VimEnter"},
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup()
-  --     end, 100)
-  --   end,
-  -- }
-  -- use {
-  --   "zbirenbaum/copilot-cmp",
-  --   module = "copilot_cmp",
-  -- }
 
   -- Telescope
   use {
