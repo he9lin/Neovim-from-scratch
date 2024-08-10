@@ -19,5 +19,5 @@ lspconfig.elixirls.setup{
 }
 
 lspconfig.lua_ls.setup{
-  cmd = { "/home/he9lin/.lua-ls/bin/Linux/lua-language-server" };
+  cmd = { "/home/he9lin/.lua-ls/bin/lua-language-server" };
 }
